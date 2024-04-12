@@ -4,7 +4,7 @@
   "description": "Chatbot flow builder",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "npx parcel build index.html"
   },
   "author": "ScriptoPlankton",
   "license": "ISC",
