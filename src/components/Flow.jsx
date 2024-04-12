@@ -29,7 +29,6 @@ const Flow = () => {
   const onEdgesChange = useCallback(changes => setEdges(edges => applyEdgeChanges(changes, edges)), [setEdges]);
 
   const onConnect = useCallback((params) => {
-    // console.log(params, edges);
     // checking for edge conflict
     const conflict = edges.find(edge => edge.source === params.target && edge.target === params.source)
     if (!conflict) {
@@ -71,6 +70,7 @@ const Flow = () => {
 
   }, [reactFlowInstance])
 
+  // Capturing the selected node
   const onNodeClick = useCallback((e, node) => {
     e.preventDefault();
     setSelectedNode(node)

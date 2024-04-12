@@ -45,6 +45,7 @@ const NavPanel = () => {
 
   const { nodes, edges } = useContext(FlowContext)
 
+  // Checking if all nodes are connected 
   const areAllnodesConnected = () => {
     for (let i = 0; i < nodes.length; i++) {
       const index = i;
@@ -63,6 +64,7 @@ const NavPanel = () => {
     return true
   }
 
+  // Tostifying if the nodes are saved or not
   const handleSave = () => {
     if (!areAllnodesConnected()) {
       toast.error('Flow Not Saved!', {

@@ -1,10 +1,10 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">FitMerch🛒</h1>
+<h1 align="center">Chat flow builder 💬</h1>
 
 <div align="center">
   <h3>
-    <a href="https://bitespeed-chatflowbuilder.netlify.app" target="_blank">
+    <a href="https://bitespeed-chatflowbuilder.netlify.app?target=_blank">
      >> Demo <<
     </a>   
   </h3>
@@ -49,6 +49,6 @@ Chatbot flow is built by connecting multiple messages together to decide the ord
 
 ## Contact
 
-- Website [ScriptoPlankton](https://sandeep.netlify.app/)
-- GitHub [@sandeepashok](https://github.com/sandeepashok)
-- Gmail [Sandeep98a@gmail.com](sandeep98a@gmail.com)
+- Website [ScriptoPlankton](https://sandeep.netlify.app?target=_blank)
+- GitHub [@sandeepashok](https://github.com/sandeepashok?target=_blank)
+- Gmail [Sandeep98a@gmail.com](sandeep98a@gmail.com?target=_blank)

@@ -74,6 +74,7 @@ const MyHandle = styled(Handle)`
 const MessageNode = (props) => {
   const { nodes } = useContext(FlowContext)
   const { data: { label }, id } = props
+  // Getting first message node to make it input node
   let isFirst = nodes && nodes.length > 0 && id === nodes[0].id
   return (
     <MessageNodeContainer>

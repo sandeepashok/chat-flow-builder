@@ -115,20 +115,20 @@ const SettingsPanel = ({ selectedNode, setSelectedNode, setNodes }) => {
     }
   }, [selectedNode])
 
+  // Function to initiate drag
   const onDragStart = (e) => {
     e.dataTransfer.setData('application/reactflow', 'someData');
     e.dataTransfer.effectAllowed = 'move';
   }
 
+  // Handling message node edit and saving
   const handleLabelChange = (e) => {
     setEditedLabel(e.target.value)
   }
-
   const handleLabelUpdate = () => {
     if (!selectedNode) {
       return
     }
-
     setNodes(prevNodes => {
       return prevNodes.map(node => {
         if (node.id === selectedNode.id) {
@@ -141,6 +141,7 @@ const SettingsPanel = ({ selectedNode, setSelectedNode, setNodes }) => {
     setSelectedNode(null)
   }
 
+  // Saving edited message on pressing enter
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       handleLabelUpdate();
