@@ -49,7 +49,7 @@ const NavPanel = () => {
   const areAllnodesConnected = () => {
     for (let i = 0; i < nodes.length; i++) {
       const index = i;
-      const node = nodes[i];
+      const node = nodes[index];
       if (index === 0) {
         const sourceEdgeConnected = edges.find(edge => edge.source === node.id);
         if (!sourceEdgeConnected) {
@@ -64,9 +64,27 @@ const NavPanel = () => {
     return true
   }
 
+
+  function feedbackLoopexists() {
+    let feedbackLoopFound = false;
+
+    edges.forEach(currentEdge => {
+      const currentSource = currentEdge.source;
+      const currentTarget = currentEdge.target;
+
+      edges.filter(otherEdge => currentEdge !== otherEdge).forEach(otherEdge => {
+        if (currentTarget === otherEdge.source && currentSource === otherEdge.target) {
+          feedbackLoopFound = true;
+        }
+      });
+    });
+
+    return feedbackLoopFound;
+  }
+
   // Tostifying if the nodes are saved or not
   const handleSave = () => {
-    if (!areAllnodesConnected()) {
+    if (!areAllnodesConnected() && nodes.length !== 1 || feedbackLoopexists()) {
       toast.error('Flow Not Saved!', {
         position: "top-center",
         autoClose: 2000,
